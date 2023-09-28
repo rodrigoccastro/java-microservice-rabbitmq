@@ -1,3 +1,7 @@
+In this repository we have a mock of 3 microservices 
+In the first microservice we user rabbitMQ
+
+
 1. install rabbit
 docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.12-managemen
 
