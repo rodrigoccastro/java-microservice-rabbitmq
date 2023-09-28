@@ -1,0 +1,20 @@
+1. install rabbit
+docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.12-managemen
+
+2. run services
+
+2.1 service 1
+	info: receives param from the request and sends it to the queue to save in the temporary base (ex: mongoDb)
+	start service: microservice/read/client/Service.java
+	to save in mongo: microservice/read/client/queue/QueueConsumer.java
+
+2.2 service 2
+	info: consumer that runs from time to time,
+	read new data in base mongo, save in base postgres and delete from mongo
+
+2.3 service3
+	info: show the list of postgres database
+
+3. teste
+	3.1 call localhost:8081/service1?id=1&name=teste
+	3.2 call localhost:8083/service3
